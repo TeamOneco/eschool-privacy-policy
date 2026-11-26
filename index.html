@@ -3,91 +3,597 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>سياسة الخصوصية — eSCHOOL</title>
+  <meta name="description" content="سياسة الخصوصية الرسمية لتطبيق إسكول (eSCHOOL) - منصة الإدارة المدرسية والتعليم الذكي من شركة تيم ون." />
+  <title>سياسة الخصوصية | إسكول eSCHOOL</title>
+
+  <!-- Google Fonts: Tajawal & Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-      line-height: 1.8;
-      color: #1e293b;
-      background: #f8fafc;
-      margin: 0;
-      padding: 24px;
+    :root {
+      --primary: #0d47a1;
+      --primary-light: #1976d2;
+      --accent: #00acc1;
+      --bg-body: #f4f7fb;
+      --bg-card: #ffffff;
+      --bg-subtle: #f8fafc;
+      --text-main: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 45px rgba(13, 71, 161, 0.08);
+      --radius-lg: 20px;
+      --radius-md: 14px;
     }
-    .container {
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-body: #0b1120;
+        --bg-card: #111827;
+        --bg-subtle: #1e293b;
+        --text-main: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --border-color: #1e293b;
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+        --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.45);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero Header */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #092c6c 0%, #0d47a1 52%, #1565c0 100%);
+      color: #ffffff;
+      padding: 56px 20px 96px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 340px;
+      height: 340px;
+      top: -120px;
+      right: -80px;
+    }
+
+    .hero::after {
+      width: 280px;
+      height: 280px;
+      bottom: -110px;
+      left: -60px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
       max-width: 820px;
       margin: 0 auto;
-      background: #ffffff;
-      padding: 32px;
+    }
+
+    .logo-wrap {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 18px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 24px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
     }
-    h1 {
-      margin-top: 0;
-      color: #0d47a1;
-      font-size: 1.75rem;
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 14px;
     }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 640px;
+      margin: 0 auto 18px;
+    }
+
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .meta-pills span {
+      background: rgba(15, 23, 42, 0.25);
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 920px;
+      margin: -54px auto 60px;
+      padding: 0 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: clamp(22px, 4vw, 42px);
+    }
+
+    /* Quick TOC */
+    .toc {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 32px;
+    }
+
+    .toc-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .toc-links a {
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 6px 13px;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .toc-links a:hover {
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    /* Sections */
+    .section {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 8px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
     h2 {
-      color: #0f172a;
-      font-size: 1.2rem;
-      margin-top: 24px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 6px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
     }
-    ul {
-      padding-right: 20px;
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-size: 0.98rem;
     }
-    .meta {
-      color: #64748b;
+
+    ul.styled-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    ul.styled-list li {
+      position: relative;
+      padding-right: 26px;
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+    }
+
+    ul.styled-list li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      top: 1px;
+      color: var(--primary-light);
+      font-weight: 800;
+    }
+
+    ul.styled-list li strong {
+      color: var(--text-main);
+    }
+
+    /* Data Grid */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .data-item {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .data-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .data-item p {
       font-size: 0.9rem;
-      margin-bottom: 20px;
+      margin-bottom: 0;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(13, 71, 161, 0.06), rgba(0, 172, 193, 0.06));
+      border-right: 4px solid var(--primary-light);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 12px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Contact Card */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+
+    .contact-card:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(25, 118, 210, 0.12);
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .contact-info strong {
+      font-size: 0.98rem;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    footer strong {
+      color: var(--text-main);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>سياسة الخصوصية لتطبيق eSCHOOL</h1>
-    <div class="meta">آخر تحديث: نوفمبر 2026 — مقدم الخدمة: شركة تيم ون (Team One)</div>
 
-    <p>
-      تحترم شركة تيم ون خصوصية الطلاب وأولياء الأمور والهيئات التعليمية والإدارية عند استخدام تطبيق
-      <strong>eSCHOOL</strong>. توضح هذه الوثيقة أنواع البيانات التي يتم معالجتها وكيفية استخدامها وحمايتها.
-    </p>
+  <!-- Header -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="logo-wrap">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/maqathi-67d58.appspot.com/o/eschool.png?alt=media&token=8d54941d-ead1-4749-b899-5dd71ce9f5fe"
+          alt="شعار تطبيق إسكول eSCHOOL"
+        />
+      </div>
+      <div class="badge">الوثيقة الرسمية للخصوصية وحماية البيانات</div>
+      <h1>سياسة الخصوصية — تطبيق إسكول (eSCHOOL)</h1>
+      <p>
+        نلتزم في <strong>شركة تيم ون (Team One)</strong> بحماية خصوصية الطلاب وأولياء الأمور والكوادر التعليمية والإدارية وتأمين بياناتهم بأعلى المعايير التقنية.
+      </p>
+      <div class="meta-pills">
+        <span>آخر تحديث: نوفمبر 2026</span>
+        <span>الإصدار: 1.0</span>
+        <span>الجهة المطوّرة: Team One</span>
+      </div>
+    </div>
+  </header>
 
-    <h2>1. البيانات التي نجمعها أو نعالجها</h2>
-    <ul>
-      <li><strong>بيانات الحساب والملف المدرسي:</strong> مثل الاسم، المعرّف الدراسي، المدرسة، المرحلة/الصف، والشعبة لتقديم الخدمات المدرسية المخصصة.</li>
-      <li><strong>البيانات الأكاديمية والتشغيلية:</strong> مثل سجل الحضور والغياب والإجازات، الكتب الدراسية، الواجبات المدرسية وحالة تسليمها، والبيانات المالية الدراسية المرتبطة بحساب الطالب.</li>
-      <li><strong>معرّفات الجهاز والإشعارات:</strong> مثل رموز الإشعارات (FCM Tokens) لإرسال التنبيهات المدرسية والواجبات والمواعيد المهمة.</li>
-      <li><strong>البيانات التشخيصية:</strong> سجلات الأخطاء والأداء لتحسين استقرار التطبيق ومعالجة الأعطال.</li>
-    </ul>
+  <!-- Main Content -->
+  <main class="container">
+    <div class="card">
 
-    <h2>2. كيفية استخدام البيانات</h2>
-    <ul>
-      <li>تشغيل ميزات النظام المدرسي وعرض الجداول والواجبات والحضور والحسابات وفق صلاحيات المستخدم.</li>
-      <li>إرسال الإشعارات والتنبيهات المتعلقة بالدراسة والواجبات.</li>
-      <li>تحسين جودة الخدمة، أمان الجلسات، ومنع إساءة الاستخدام.</li>
-    </ul>
+      <!-- Quick Navigation -->
+      <nav class="toc" aria-label="فهرس المحتويات">
+        <div class="toc-title">التنقل السريع في بنود السياسة</div>
+        <div class="toc-links">
+          <a href="#intro">مقدمة</a>
+          <a href="#data-collected">البيانات التي نجمعها</a>
+          <a href="#data-usage">كيفية الاستخدام</a>
+          <a href="#permissions">أذونات الجهاز</a>
+          <a href="#third-party">الخدمات السحابية</a>
+          <a href="#security">أمن البيانات</a>
+          <a href="#children">خصوصية الطلاب</a>
+          <a href="#rights">حقوق المستخدم</a>
+          <a href="#contact">تواصل معنا</a>
+        </div>
+      </nav>
 
-    <h2>3. مشاركة البيانات والخدمات الطرفية</h2>
-    <p>
-      لا نقوم ببيع بيانات المستخدمين لأي جهة خارجية. قد تتم معالجة أو تخزين بعض البيانات عبر مزودي بنية تحتية سحابية موثوقين (مثل خدمات Firebase والاستضافة السحابية) وفق الضوابط الأمنية اللازمة، وبما يقتصر على تشغيل المنصة التعليمية للمدرسة المعنية.
-    </p>
+      <!-- Section 1 -->
+      <section class="section" id="intro">
+        <div class="section-header">
+          <span class="section-num">1</span>
+          <h2>مقدمة ونطاق التطبيق</h2>
+        </div>
+        <p>
+          توضح سياسة الخصوصية هذه كيفية جمع واستخدام وتخزين وحماية المعلومات الخاصة بالمستخدمين عند استخدام تطبيق الهاتف المحمول <strong>إسكول (eSCHOOL)</strong> والخدمات المرتبطة به. باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة.
+        </p>
+      </section>
 
-    <h2>4. حماية البيانات والاحتفاظ بها</h2>
-    <p>
-      نطبّق إجراءات تقنية وتنظيمية مناسبة لحماية البيانات من الوصول غير المصرح به أو التعديل أو الفقدان، وتُحتفظ بالبيانات طالما كان الحساب أو التعاقد المدرسي نشطاً أو حسب المتطلبات الإدارية المعتمدة.
-    </p>
+      <!-- Section 2 -->
+      <section class="section" id="data-collected">
+        <div class="section-header">
+          <span class="section-num">2</span>
+          <h2>البيانات التي نقوم بجمعها ومعالجتها</h2>
+        </div>
+        <p>يقتصر جمع البيانات على ما هو ضروري لتشغيل العملية التعليمية والإدارية داخل المدرسة، ويشمل ذلك:</p>
+        <div class="data-grid">
+          <div class="data-item">
+            <h3>بيانات الهوية والحساب المدرسي</h3>
+            <p>الاسم الكامل، الرقم التعريفي للطالب أو الموظف، اسم المدرسة، المرحلة الدراسية، الصف، الشعبة، وبيانات تسجيل الدخول المعتمدة من المدرسة.</p>
+          </div>
+          <div class="data-item">
+            <h3>السجلات الأكاديمية والتعليمية</h3>
+            <p>الحضور والغياب والإجازات، الجداول الدراسية، الكتب والمقررات، الواجبات المدرسية وحالة تسليمها، التقييمات، والنتائج الدراسية.</p>
+          </div>
+          <div class="data-item">
+            <h3>البيانات المالية الدراسية</h3>
+            <p>ملخص الرسوم الدراسية، الأقساط، المدفوعات، والرصيد المتبقي الخاص بحساب الطالب كما هو مسجل لدى إدارة المدرسة.</p>
+          </div>
+          <div class="data-item">
+            <h3>البيانات التقنية والإشعارات</h3>
+            <p>رمز إشعارات الجهاز (FCM Token)، نوع الجهاز ونظام التشغيل، وسجلات الأعطال التشخيصية لتحسين استقرار التطبيق وسرعته.</p>
+          </div>
+        </div>
+      </section>
 
-    <h2>5. حقوق المستخدم وطلبات الحذف أو التعديل</h2>
-    <p>
-      يمكن للمستخدمين أو الجهات الإدارية المخولة طلب مراجعة أو تحديث أو حذف البيانات المرتبطة بالحساب وفق السياسات المعتمدة للمدرسة عبر التواصل معنا.
-    </p>
+      <!-- Section 3 -->
+      <section class="section" id="data-usage">
+        <div class="section-header">
+          <span class="section-num">3</span>
+          <h2>كيف نستخدم البيانات؟</h2>
+        </div>
+        <ul class="styled-list">
+          <li><strong>تقديم الخدمات المدرسية:</strong> تمكين الطالب وولي الأمر والمعلم من الوصول إلى الجداول، الواجبات، الحضور، والملف المالي حسب صلاحية كل حساب.</li>
+          <li><strong>الإشعارات الفورية:</strong> إرسال تنبيهات بالواجبات الجديدة، مواعيد التسليم، الإعلانات المدرسية، وحالات الحضور.</li>
+          <li><strong>الأمان والتحقق:</strong> مصادقة جلسات الدخول وحماية الحسابات المدرسية من الوصول غير المصرح به.</li>
+          <li><strong>تحسين الأداء:</strong> تحليل الأعطال التقنية وتحسين تجربة المستخدم وتوافق التطبيق مع مختلف الأجهزة.</li>
+        </ul>
+      </section>
 
-    <h2>6. التواصل معنا</h2>
-    <p>
-      لأي استفسار حول سياسة الخصوصية أو طلبات البيانات، يرجى التواصل عبر البريد الإلكتروني الرسمي:
-      <strong>support@teamoneco.com</strong>
-    </p>
-  </div>
+      <!-- Section 4 -->
+      <section class="section" id="permissions">
+        <div class="section-header">
+          <span class="section-num">4</span>
+          <h2>أذونات الجهاز المطلوبة</h2>
+        </div>
+        <p>قد يطلب التطبيق الأذونات التالية عند الحاجة فقط:</p>
+        <ul class="styled-list">
+          <li><strong>الإشعارات (Notifications):</strong> لاستقبال التنبيهات الدراسية والإدارية المهمة.</li>
+          <li><strong>الوصول إلى الملفات والوسائط (Storage / Media):</strong> لتحميل الكتب الدراسية والمرفقات أو رفع ملفات الواجبات المدرسية.</li>
+          <li><strong>الكاميرا (Camera — اختياري):</strong> لتصوير المستندات أو حلول الواجبات عند رغبة المستخدم في إرفاقها.</li>
+          <li><strong>الاتصال بالإنترنت (Internet):</strong> لمزامنة البيانات المدرسية بشكل فوري وآمن.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="section" id="third-party">
+        <div class="section-header">
+          <span class="section-num">5</span>
+          <h2>مشاركة البيانات والخدمات الطرفية</h2>
+        </div>
+        <p>
+          نحن <strong>لا نبيع أو نؤجر</strong> البيانات الشخصية للمستخدمين لأي طرف ثالث لأغراض إعلانية أو تجارية. قد تتم معالجة البيانات وتخزينها عبر مزودي بنية تحتية سحابية موثوقين لتشغيل التطبيق، مثل:
+        </p>
+        <ul class="styled-list">
+          <li><strong>Google Firebase (Authentication, Cloud Firestore, Cloud Storage, Cloud Messaging):</strong> لإدارة المصادقة وقواعد البيانات السحابية وتخزين الملفات وإرسال الإشعارات وفق معايير أمان Google.</li>
+          <li><strong>إدارة المدرسة المعنية:</strong> تظل البيانات الأكاديمية والإدارية خاضعة لإشراف وصلاحيات المدرسة المسجّل بها الطالب.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="section" id="security">
+        <div class="section-header">
+          <span class="section-num">6</span>
+          <h2>أمن البيانات والاحتفاظ بها</h2>
+        </div>
+        <p>
+          نطبق ضوابط تقنية وإدارية لحماية البيانات أثناء النقل والتخزين، بما في ذلك التشفير عبر بروتوكول <strong>HTTPS/TLS</strong>، وقواعد عزل البيانات لكل مدرسة، وتقييد الوصول حسب الصلاحيات. يُحتفظ بالبيانات طالما كان حساب الطالب أو اشتراك المدرسة سارياً، أو وفق السياسات التنظيمية المعتمدة لدى المدرسة.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="section" id="children">
+        <div class="section-header">
+          <span class="section-num">7</span>
+          <h2>خصوصية الطلاب والقُصّر</h2>
+        </div>
+        <div class="highlight-box">
+          تُنشأ حسابات الطلاب وتُدار حصرياً عبر المؤسسات التعليمية والمدارس المعتمدة وبموافقة وإشراف أولياء الأمور والجهات التعليمية، ولا يعرض التطبيق أي إعلانات تجارية موجهة للأطفال أو الطلاب.
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="section" id="rights">
+        <div class="section-header">
+          <span class="section-num">8</span>
+          <h2>حقوق المستخدم وطلبات التعديل أو الحذف</h2>
+        </div>
+        <p>
+          يحق للطلاب وأولياء الأمور والمؤسسات التعليمية طلب الاطلاع على البيانات الشخصية المرتبطة بحساباتهم أو تصحيحها أو طلب حذف الحساب والبيانات المرتبطة به عبر التواصل مع إدارة المدرسة أو مراسلتنا مباشرة عبر قنوات الدعم أدناه.
+        </p>
+      </section>
+
+      <!-- Section 9 -->
+      <section class="section" id="contact">
+        <div class="section-header">
+          <span class="section-num">9</span>
+          <h2>التواصل معنا والدعم الفني</h2>
+        </div>
+        <p>
+          إذا كانت لديك أي أسئلة حول سياسة الخصوصية أو رغبت في تقديم طلب متعلق ببياناتك، يسعدنا تواصلك معنا عبر القنوات الرسمية التالية:
+        </p>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:teamoneco24@gmail.com">
+            <div class="contact-icon" aria-hidden="true">✉️</div>
+            <div class="contact-info">
+              <span>البريد الإلكتروني للدعم الفني</span>
+              <strong>teamoneco24@gmail.com</strong>
+            </div>
+          </a>
+
+          <a class="contact-card" href="https://wa.me/967783815081" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon" aria-hidden="true">📞</div>
+            <div class="contact-info">
+              <span>رقم الهاتف / واتساب الدعم</span>
+              <strong>+967 783 815 081</strong>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      <p>© 2026 <strong>تطبيق إسكول (eSCHOOL)</strong> — جميع الحقوق محفوظة لـ <strong>شركة تيم ون (Team One)</strong>.</p>
+    </footer>
+  </main>
+
 </body>
 </html>
